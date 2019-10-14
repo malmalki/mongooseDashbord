@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All Animal</h1>
+
+    <form action="/new" method="POST">
+        <input type="text" name="name" placeholder="name">
+        <input type="text" name="age" placeholder="Age">
+        <input type="submit" value="Add new Animal">
+    </form>
+    <% for (var x in arr) { %>
+        <h4><%= arr[x].name %> </h4>
+        <h3><%= arr[x].age %> </h3>
+        <%= arr[x]._id %> 
+        <a href="/view/<%= arr[x]._id %>"  >view</a>
+        <form action="/delete/<%= arr[x]._id %>" method="POST">
+            <input type="submit" value="Delete">
+        </form>
+        
+
+        <hr>
+        <% } %>
+    </body>
+</html>
